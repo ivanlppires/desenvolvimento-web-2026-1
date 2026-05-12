@@ -10,7 +10,7 @@ app.get('/', (req, res)=>{ // rota raiz
     res.send('Olá Mundo');
 } );
 
-// CRUD de produtos
+// CRUD de produtos     
 // Create
 app.post('/produtos', (req, res) => {
     res.send('Criar um novo produto');
