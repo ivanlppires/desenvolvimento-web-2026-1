@@ -17,7 +17,7 @@ app.post('/produtos', (req, res) => {
 });
 // Read All
 app.get('/produtos', (req, res) => {
-    const produtos = ['32GB DRR5', 'SSD NVME 16TB', 'NVIDIA H200'];
+    const produtos = [ 'SSD NVME 16TB', 'NVIDIA H200', 'Teclado Brown Key Switch']; // VETOR SIMULADO BD
     res.json(produtos);
 });
 // Read One - ":id" é um parâmetro de rota
