@@ -6,9 +6,22 @@ app.get('/', (req, res)=>{ // rota raiz
     res.send('Olá Mundo');
 } );
 
-app.get('/cadastro', (req, res) =>{ // rota cadastro
-    res.send('vou realizar um insert no banco de dados');
+// CRUD de produtos
+// Create
+app.post('/produtos', (req, res) => {
+    res.send('Criar um novo produto');
 });
+// Read All
+app.get('/produtos', (req, res) => {
+    res.send('Listar todos os produtos');
+})
+// Read One - ":id" é um parâmetro de rota
+app.get('/produto/:id', (req, res) => {
+    const id = req.params.id;
+    res.send('Detalhes do produto com ID: ' + id);
+})
+
+
 
 const port = 3000;
 app.listen(port, () =>{
