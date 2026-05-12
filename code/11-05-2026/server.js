@@ -1,6 +1,10 @@
 import express from 'express';
-
+import cors from 'cors'; // CORS: política de acesso ao backend
 const app = express();
+
+// middleware
+app.use(cors());
+app.use(express.json()); // para interpretar JSON no corpo das requisições
 
 app.get('/', (req, res)=>{ // rota raiz
     res.send('Olá Mundo');
@@ -13,7 +17,8 @@ app.post('/produtos', (req, res) => {
 });
 // Read All
 app.get('/produtos', (req, res) => {
-    res.send('Listar todos os produtos');
+    const produtos = ['32GB DRR5', 'SSD NVME 16TB', 'NVIDIA H200'];
+    res.json(produtos);
 });
 // Read One - ":id" é um parâmetro de rota
 app.get('/produto/:id', (req, res) => {
@@ -30,8 +35,6 @@ app.delete('/produto/:id', (req, res) => {
     const id = req.params.id;
     res.send('Excluir o produto com ID: ' + id);
 });
-
-
 
 const port = 3000;
 app.listen(port, () =>{
