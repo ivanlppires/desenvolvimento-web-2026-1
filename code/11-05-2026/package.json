@@ -1,0 +1,17 @@
+{
+  "name": "11-05-2026",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot server.js"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
