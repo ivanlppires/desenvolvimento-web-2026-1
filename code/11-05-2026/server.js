@@ -14,12 +14,22 @@ app.post('/produtos', (req, res) => {
 // Read All
 app.get('/produtos', (req, res) => {
     res.send('Listar todos os produtos');
-})
+});
 // Read One - ":id" é um parâmetro de rota
 app.get('/produto/:id', (req, res) => {
     const id = req.params.id;
     res.send('Detalhes do produto com ID: ' + id);
-})
+});
+// Update
+app.put('/produto/:id', (req, res) => {
+    const id = req.params.id;
+    res.send('Atualizar o produto com ID: ' + id);
+});
+// Delete
+app.delete('/produto/:id', (req, res) => {
+    const id = req.params.id;
+    res.send('Excluir o produto com ID: ' + id);
+});
 
 
 
