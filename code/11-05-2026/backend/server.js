@@ -33,6 +33,13 @@ const p3 = {
 
 produtos.push(p1, p2, p3);
 
+/* Endpoint para listar todos os produtos */
+app.get('/produtos', (req, res) => {
+    // verificar os parâmetros de consulta para filtrar
+    const parametros = req.query;
+    console.log(parametros);
+    res.json(produtos);
+});
 
 const PORT = 3000;
 app.listen(PORT, () => {
