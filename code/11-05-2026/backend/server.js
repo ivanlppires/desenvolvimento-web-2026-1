@@ -1,38 +1,40 @@
 import express from 'express';
-import cors from 'cors'; // CORS: política de acesso ao backend
+import cors from 'cors';
+
 const app = express();
-
-// middleware
 app.use(cors());
-app.use(express.json()); // para interpretar JSON no corpo das requisições
+app.use(express.json());
 
-// CRUD de produtos     
-// Create
-app.post('/produtos', (req, res) => {
-    res.send('Criar um novo produto');
-});
-// Read All
-app.get('/produtos', (req, res) => {
-    const produtos = [ 'SSD NVME 16TB', 'NVIDIA H200', 'Teclado Brown Key Switch']; // VETOR SIMULADO BD
-    res.json(produtos);
-});
-// Read One - ":id" é um parâmetro de rota
-app.get('/produto/:id', (req, res) => {
-    const id = req.params.id;
-    res.send('Detalhes do produto com ID: ' + id);
-});
-// Update
-app.put('/produto/:id', (req, res) => {
-    const id = req.params.id;
-    res.send('Atualizar o produto com ID: ' + id);
-});
-// Delete
-app.delete('/produto/:id', (req, res) => {
-    const id = req.params.id;
-    res.send('Excluir o produto com ID: ' + id);
-});
+/* AQUI VAI MEU CRUD DE PRODUTOS */
+const produtos = [];
 
-const port = 3000;
-app.listen(port, () =>{
-    console.log('Servidor rodando na porta ' + port);
-})
+/* Adicionano objetos no vetor produtos */
+const p1 = {
+    id: 1,
+    nome: 'Alienware',
+    tipo: 'Notebook',
+    status: 'disponível',
+    descricao: 'Notebook para processamento elevado'
+}
+const p2 = {
+    id: 2,
+    nome: 'Chromebook 14',
+    tipo: 'Notebook',
+    status: 'disponível',
+    descricao: 'Notebook leve e portátil'
+}
+const p3 = {
+    id: 3,
+    nome: 'Epson Power Lite W39',
+    tipo: 'Projetor',
+    status: 'emprestado',
+    descricao: 'Projetor para apresentações'
+}
+
+produtos.push(p1, p2, p3);
+
+
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
