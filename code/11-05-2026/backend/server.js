@@ -6,10 +6,6 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // para interpretar JSON no corpo das requisições
 
-app.get('/', (req, res)=>{ // rota raiz
-    res.send('Olá Mundo');
-} );
-
 // CRUD de produtos     
 // Create
 app.post('/produtos', (req, res) => {
