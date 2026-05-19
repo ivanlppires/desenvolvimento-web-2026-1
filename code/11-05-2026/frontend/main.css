@@ -21,3 +21,20 @@ h1 + div {
     width: 90%;
     margin: auto;
 }
+div#produtos table{
+    width: 100%;
+    border-collapse: collapse;
+    border:2px solid #555;
+    background-color: #777;
+    text-align: left;
+}
+div#produtos th{
+    background-color:#111;
+    color:#ddd;
+}
+div#produtos td, div#produtos th{
+    padding:10px;
+}
+div#produtos tr:nth-child(even) td{
+    background-color: #444;
+}

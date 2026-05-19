@@ -5,7 +5,7 @@ const getProducts = async () => {
     const products = await response.json();
 
     for (const p of products) {
-        el.innerHTML += '<P>' + p + '</P>';
+        console.log(p);
     }
 }
 getProducts();
