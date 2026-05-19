@@ -15,7 +15,7 @@ h1{
     border-bottom:10px solid #555;
     text-shadow: 2px 2px 4px #000;
 }
-h1 + div {
+div {
     gap: 20px;
     padding: 20px;
     width: 90%;
@@ -37,4 +37,13 @@ div#produtos td, div#produtos th{
 }
 div#produtos tr:nth-child(even) td{
     background-color: #444;
+}
+input, select, button{
+    padding:10px;
+    margin:4px;
+    border:1px solid black;
+}
+button:hover{
+    cursor: pointer;
+    background-color: #555;
 }
