@@ -36,8 +36,10 @@ produtos.push(p1, p2, p3);
 /* Endpoint para listar todos os produtos */
 app.get('/produtos', (req, res) => {
     // verificar os parâmetros de consulta para filtrar
-    const parametros = req.query;
-    console.log(parametros);
+    const { status, tipo, busca} = req.query;
+    console.log('status:', status);
+    console.log('tipo:', tipo);
+    console.log('busca:', busca);
     res.json(produtos);
 });
 
