@@ -12,21 +12,21 @@ const produtos = [];
 const p1 = {
     id: 1,
     nome: 'Alienware',
-    tipo: 'Notebook',
+    tipo: 'notebook',
     status: 'disponivel',
     descricao: 'Notebook para processamento elevado'
 }
 const p2 = {
     id: 2,
     nome: 'Chromebook 14',
-    tipo: 'Notebook',
+    tipo: 'notebook',
     status: 'manutencao',
     descricao: 'Notebook leve e portátil'
 }
 const p3 = {
     id: 3,
     nome: 'Epson Power Lite W39',
-    tipo: 'Projetor',
+    tipo: 'projetor',
     status: 'emprestado',
     descricao: 'Projetor para apresentações'
 }
@@ -43,6 +43,8 @@ app.get('/produtos', (req, res) => {
     if(status) resultado = resultado.filter(p => p.status === status);
     // filtrar por tipo
     if(tipo) resultado = resultado.filter(p => p.tipo === tipo);  
+    // filtrar por busca no nome ou descrição
+    if(busca) resultado = resultado.filter(p => p.nome.toLowerCase().includes(busca.toLowerCase()))
 
     res.json(resultado);
 });

@@ -13,19 +13,19 @@
     <H1>PRODUTOS DO BACKEND</H1>
     <div id="filtros">
         <p>Filtros de pesquisa</p>
-        <input type="text" id="nome" placeholder="Nome" />
+        <input type="text" id="nome" placeholder="Nome" value="" />
         <select id="status">
-            <option> - Status - </option>
+            <option value=""> - Status - </option>
             <option value="emprestado">Emprestado</option>
             <option value="disponivel">Disponível</option>
-            <option value="manutecao">Em Manutenção</option>
+            <option value="manutencao">Em Manutenção</option>
         </select>
         <select id="tipo">
-            <option> - Tipo - </option>
+            <option value=""> - Tipo - </option>
             <option value="notebook">Notebook</option>
             <option value="projetor">Projetor</option>
         </select>
-        <button id="filtrar">Filtrar</button>
+        <button id="filtrar" onclick="getProducts()">Filtrar</button>
     </div>
     <div id="produtos">
         <table>
@@ -38,22 +38,7 @@
                     <th>Descrição</th>
                 </tr>
             </thead>
-            <tbody id="data">
-                <tr>
-                    <td>1</td>
-                    <td>Mouse Logitech</td>
-                    <td>Periférico</td>
-                    <td>Empreado</td>
-                    <td>Produto de exemplo</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Mouse Logitech</td>
-                    <td>Periférico</td>
-                    <td>Empreado</td>
-                    <td>Produto de exemplo</td>
-                </tr>
-            </tbody>
+            <tbody id="data"></tbody>
         </table>
     </div>
     <script src='main.js'></script>
